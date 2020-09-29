@@ -25,10 +25,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="27122d4b-40c2-4c5b-ab84-080d9bc8e4b2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/laba2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/code_2.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laba1.html" beforeDir="false" afterPath="$PROJECT_DIR$/laba1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laba2.html" beforeDir="false" afterPath="$PROJECT_DIR$/laba2.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -64,12 +63,20 @@
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JavaScript Debug.laba2.html">
+    <configuration name="code_2.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Laba1/code_2.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
     <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Laba1/index.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="laba2.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Laba1/laba2.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JavaScript Debug.laba2.html" />
+        <item itemvalue="JavaScript Debug.code_2.html" />
         <item itemvalue="JavaScript Debug.index.html" />
       </list>
     </recent_temporary>
@@ -91,6 +98,7 @@
       <workItem from="1600845881138" duration="1808000" />
       <workItem from="1600853874773" duration="684000" />
       <workItem from="1601387326955" duration="6189000" />
+      <workItem from="1601403859977" duration="306000" />
     </task>
     <servers />
   </component>
@@ -107,6 +115,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="549" y="154" key="FileChooserDialogImpl" timestamp="1600427455594">
