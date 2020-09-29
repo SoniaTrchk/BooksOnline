@@ -10,8 +10,15 @@
 <style>
     ul{
         font-family: Arial;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
     }
-    table{
+    table#table{
+        margin-left: 2%;
+        background-color: azure;
+        font-size: large;
         font-family: Arial;
     }
 </style>
@@ -22,9 +29,10 @@
 </header>
 
 <nav class="nav-style">
-    <ul class="ul-style">
+    <ul>
         <li class="li-style"><a class="li-a-style" href="index.html">Головна сторінка</a></li>
         <li class="li-style"><a class="li-a-style" href="laba1.html">Лабораторна робота 1</a></li>
+        <li class="li-style"><a class="li-a-style" href="laba2.html">Лабораторна робота 2</a></li>
     </ul>
 </nav>
 
@@ -39,7 +47,7 @@
     </fieldset>
 </form>
 
-<table class="table-style">
+<table id="table">
     <caption style="color: azure">На нашому сайті Ви можете знайти:</caption>
     <tr>
         <th>Авторів</th>
