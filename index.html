@@ -3,58 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <title>Books Online</title>
-    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/main_style.css">
     <link rel="shortcut icon" type="image/x-icon" href="images/book.png" />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya&family=Caveat&display=swap" rel="stylesheet">
 </head>
+<body>
+<div class="container">
+    <header>
+        <div class="header">
+            <img src="images/logo.png" class="logo">
+            <a href="index.html" class="logo"><h1>Books Online</h1></a>
+            <nav>
+                <ul>
+                    <li><a href="">Головна</a></li>
+                    <li><a href="">Про нас</a></li>
+                    <li><a href="">Автори</a></li>
+                    <li><a href="">Література</a></li>
+                </ul>
+            </nav>
+            <form class="search">
+                <input type="search" placeholder="Пошук">
+                <input type="submit" value="Знайти">
+            </form>
+        </div>
+    </header>
 
-<style>
-    ul{
-        font-family: Arial;
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-    }
-    table#table{
-        margin-left: 2%;
-        background-color: azure;
-        font-size: large;
-        font-family: Arial;
-    }
-</style>
+    <div class="main">
+        <div class="best-lib">
+            Найкраще в бібліотеці
+        </div>
+        <div class="best-today">
+            Найкраще сьогодні
+        </div>
+    </div>
+    <div class="bottom">
+        <p class="bottom-text">“The library is inhabited by spirits that come out of the pages at night.”
+            – <strong>Isabel Allende</strong></p>
+        <br>
+        <p>Новинки світової літератури: </p>
+        <ul>
+            <li><strong>Мальвіль</strong> Робер Мерль</li>
+            <li><strong>Геній</strong> Мо Янь</li>
+            <li><strong>Двобій</strong> Кліффорд Саймак</li>
+        </ul>
+    </div>
 
-<body background="images/books_bg.jpg">
-<header class="header-style">
-    <h1 style="margin-left: 2%">Books Online - зручна бібліотека вдома</h1>
-</header>
+    <footer>
+        <div class="footer">
 
-<nav class="nav-style">
-    <ul class="ul-index">
-        <li class="li-style, li-index"><a class="li-a-style" href="index.html">Головна сторінка</a></li>
-        <li class="li-style, li-index"><a class="li-a-style" href="laba1.html">Лабораторна робота 1</a></li>
-        <li class="li-style, li-index"><a class="li-a-style" href="laba2.html">Лабораторна робота 2</a></li>
-    </ul>
-</nav>
-
-<form style="margin-left: 83%">
-    <fieldset style="background: black">
-        <legend style="color: azure; font-family: Arial"><strong>Вхід у систему</strong></legend>
-        <p style="color: azure"><strong>пошта</strong></p>
-        <input type="email" placeholder="логін">
-        <p style="color: azure"><strong>пароль</strong></p>
-        <input type="password" placeholder="пароль">
-        <button type="submit">Вхід</button>
-    </fieldset>
-</form>
-
-<table id="table">
-    <caption style="color: azure">На нашому сайті Ви можете знайти:</caption>
-    <tr>
-        <th>Авторів</th>
-        <th>Книг</th>
-        <th>Рецензій</th>
-    </tr>
-    <tr><td>1</td><td>0</td><td>0</td></tr>
-</table>
+        </div>
+    </footer>
+</div>
 </body>
 </html>
