@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Books Online</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" type="image/x-icon" href="book.png" />
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="images/book.png" />
 </head>
 
 <style>
@@ -23,16 +23,16 @@
     }
 </style>
 
-<body background="books_bg.jpg">
+<body background="images/books_bg.jpg">
 <header class="header-style">
     <h1 style="margin-left: 2%">Books Online - зручна бібліотека вдома</h1>
 </header>
 
 <nav class="nav-style">
-    <ul>
-        <li class="li-style"><a class="li-a-style" href="index.html">Головна сторінка</a></li>
-        <li class="li-style"><a class="li-a-style" href="laba1.html">Лабораторна робота 1</a></li>
-        <li class="li-style"><a class="li-a-style" href="laba2.html">Лабораторна робота 2</a></li>
+    <ul class="ul-index">
+        <li class="li-style, li-index"><a class="li-a-style" href="index.html">Головна сторінка</a></li>
+        <li class="li-style, li-index"><a class="li-a-style" href="laba1.html">Лабораторна робота 1</a></li>
+        <li class="li-style, li-index"><a class="li-a-style" href="laba2.html">Лабораторна робота 2</a></li>
     </ul>
 </nav>
 
@@ -40,9 +40,9 @@
     <fieldset style="background: black">
         <legend style="color: azure; font-family: Arial"><strong>Вхід у систему</strong></legend>
         <p style="color: azure"><strong>пошта</strong></p>
-        <input type="email">
+        <input type="email" placeholder="логін">
         <p style="color: azure"><strong>пароль</strong></p>
-        <input type="password">
+        <input type="password" placeholder="пароль">
         <button type="submit">Вхід</button>
     </fieldset>
 </form>
