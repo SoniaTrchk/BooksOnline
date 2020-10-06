@@ -35,10 +35,6 @@
         left: -20px;
     }
 }
-
-
-
-
 p{
     font-family: Arial;
 }
@@ -57,11 +53,40 @@ body{
     align-content: center;
 }
 .center {
-    width: 900px; /* Ширина элемента в пикселах */
-    padding: 20px; /* Поля вокруг текста */
-    margin: auto; /* Выравниваем по центру */
-    background: #E9E4E0; /* Цвет фона */
+    width: 900px;
+    padding: 20px;
+    margin: auto;
+    background: #E9E4E0;
 }
+
+.ul-index {
+    list-style: none; /*убираем маркеры списка*/
+    margin: 0; /*убираем отступы*/
+    padding-left: 0; /*убираем отступы*/
+    margin-top:25px; /*делаем отступ сверху*/
+    background:maroon; /*добавляем фон всему меню (заменив этот параметр, вы поменяете цвет всего меню)*/
+    height: 50px; /*задаем высоту*/
+}
+a {
+    text-decoration: none;
+    background:maroon;
+    color:#fff;
+    padding:0px 15px;
+    font-family: arial;
+    line-height:50px;
+    display: block;
+    border-right: 1px solid #F36262;
+    -moz-transition: all 0.3s 0.01s ease;
+    -o-transition: all 0.3s 0.01s ease;
+    -webkit-transition: all 0.3s 0.01s ease;
+}
+a:hover {
+    background:#D43737;
+}
+.li-index {
+    float:left;
+}
+
 .nav-style{
     float: none;
     position: absolute;
@@ -78,7 +103,7 @@ body{
 .li-a-style {
     display: block;
     padding: 8px;
-    background-color: darkkhaki;
+    background-color: maroon;
 }
 
 .rounded {
