@@ -26,6 +26,7 @@
   <component name="ChangeListManager">
     <list default="true" id="27122d4b-40c2-4c5b-ab84-080d9bc8e4b2" name="Default Changelist" comment="">
 <<<<<<< HEAD
+<<<<<<< HEAD
       <change afterPath="$PROJECT_DIR$/maket.css" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/maket.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
@@ -38,6 +39,11 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/laba2.html" beforeDir="false" afterPath="$PROJECT_DIR$/laba2.html" afterDir="false" />
 >>>>>>> 52ce69a992e8ce410a4bbaa4274e215b9a31a63b
+=======
+      <change afterPath="$PROJECT_DIR$/3.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/laba3-1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+>>>>>>> e44fc57a9c1b382e43b6294b312269894bc2f8b1
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,8 +56,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="CSS File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -114,6 +120,7 @@
       <workItem from="1600845881138" duration="1808000" />
       <workItem from="1600853874773" duration="684000" />
       <workItem from="1601387326955" duration="6189000" />
+<<<<<<< HEAD
       <workItem from="1601403859977" duration="628000" />
       <workItem from="1601405444968" duration="1809000" />
       <workItem from="1601447303372" duration="86000" />
@@ -122,6 +129,10 @@
       <workItem from="1601488118189" duration="61000" />
       <workItem from="1601488193217" duration="21000" />
       <workItem from="1601972575755" duration="308000" />
+=======
+      <workItem from="1601910495683" duration="199000" />
+      <workItem from="1601973028202" duration="6898000" />
+>>>>>>> e44fc57a9c1b382e43b6294b312269894bc2f8b1
     </task>
     <servers />
   </component>
@@ -141,6 +152,7 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+<<<<<<< HEAD
     <state x="549" y="154" key="FileChooserDialogImpl" timestamp="1601488208768">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -149,14 +161,20 @@
     <state x="425" y="187" key="run.anything.popup" timestamp="1600191512111">
 =======
     <state x="549" y="154" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1600427455594" />
+=======
+    <state x="549" y="154" key="FileChooserDialogImpl" timestamp="1601910693632">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="549" y="154" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1601910693632" />
+>>>>>>> e44fc57a9c1b382e43b6294b312269894bc2f8b1
     <state x="425" y="187" key="run.anything.popup" timestamp="1601760899411">
 >>>>>>> 52ce69a992e8ce410a4bbaa4274e215b9a31a63b
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1601760899411" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1601391464550">
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1601973361314">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1601391464550" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1601973361314" />
   </component>
 </project>
