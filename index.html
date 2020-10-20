@@ -4,18 +4,26 @@
     <meta charset="UTF-8">
     <title>Books Online</title>
     <link rel="stylesheet" href="style/main_style.css">
-    <link rel="shortcut icon" type="image/x-icon" href="images/book.png" />
+    <link rel="shortcut icon" type="image/x-icon" href="images/book.png"/>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Alegreya&family=Caveat&display=swap" rel="stylesheet">
 </head>
 <style>
-    ul#ul{
+    ul#ul {
         list-style-image: url("images/list_icon.png");
     }
-    ul#ul1{
+
+    ul#ul1 {
         list-style-image: url("images/bestseller.png");
     }
 </style>
+<script>
+    function main(){
+        return  window.location.href;
+    }</script>
+    <form>
+    <input value = "& {main()};">
+    </form>
 <body>
 <div class="container">
     <header>
@@ -25,14 +33,14 @@
             <nav>
                 <ul>
                     <li><a href="">Головна</a></li>
-                    <li><a href="">Про нас</a></li>
+                    <li><a href="JavaScript:window.alert('Нажаль, цей розділ не працює')">Про нас</a>
                     <li><a href="">Автори</a></li>
                     <li><a href="">Література</a></li>
                 </ul>
             </nav>
             <form class="search">
                 <input type="search" placeholder="Пошук">
-                <input type="submit" value="Знайти">
+                <input type="submit" onclick="window.alert('Пошук недоступний')" value="Знайти">
             </form>
         </div>
     </header>
@@ -54,10 +62,10 @@
         <div class="best-today">
             <ul id="ul1">
                 <h4>Бестселери нашої бібліотеки</h4>
-                <li><a><h5>Бог завжди подорожує інкогніто </h5><br><h6>Лоран Гунель</h6> </a></li>
-                <li><a><h5>Місто дівчат </h5><br><h6>Елізабет Гілберт</h6> </a></li>
-                <li><a><h5>Нормальні люди</h5><br><h6>Саллі Руні</h6> </a></li>
-                <li><a><h5>П'ять четвертинок мандарина</h5><br><h6>Джоан Гарріс</h6> </a></li>
+                <li><a><h5>Бог завжди подорожує інкогніто </h5><br><h6>Лоран Гунель</h6></a></li>
+                <li><a><h5>Місто дівчат </h5><br><h6>Елізабет Гілберт</h6></a></li>
+                <li><a><h5>Нормальні люди</h5><br><h6>Саллі Руні</h6></a></li>
+                <li><a><h5>П'ять четвертинок мандарина</h5><br><h6>Джоан Гарріс</h6></a></li>
             </ul>
         </div>
     </div>
