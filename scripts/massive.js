@@ -1,22 +1,22 @@
-var mainArray = document.getElementById("mainArray");
+var mainArray2 = document.getElementById("mainArray2");
 var summaryPaired = document.getElementById("summaryPaired");
 var negativeMultiply = document.getElementById("negativeMultiply");
 var maxNumber = document.getElementById("maxNumber");
 var minNumber = document.getElementById("minNumber");
-var sortedArray = document.getElementById("sortedArray");
+var sortedArray2 = document.getElementById("sortedArray");
 
 function main(){
-    var size = parseInt(document.getElementById("size2").value);
+    const size = parseInt(document.getElementById("size2").value);
     let arr = new Array(size);
     for (let i = 0; i < size; i++){
         arr[i] = getRndInteger(-50, 50);
     }
-    mainArray.innerHTML = "Вихідний масив: " + arr.join(", ");
+    mainArray2.innerHTML = "Вихідний масив: " + arr.join(", ");
     summaryPaired.innerHTML = "Сума елементів з парними індексами: " + summary(arr);
     negativeMultiply.innerHTML = "Добуток від'ємних чисел: " + multiply(arr);
     maxNumber.innerHTML = max(arr);
     minNumber.innerHTML = min(arr);
-    sortedArray.innerHTML = "Відсортований масив: " + arr.sort().join(", ");
+    sortedArray2.innerHTML = "Відсортований масив: " + arr.sort().join(", ");
 }
 
 function getRndInteger(min, max) {

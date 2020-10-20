@@ -1,10 +1,10 @@
-var mainArray = document.getElementById("mainArray")
+var mainArray6 = document.getElementById("mainArray6")
 var sumArray = document.getElementById("sum")
 var maxArray = document.getElementById("max")
 var minArray = document.getElementById("min")
-var sortedArray = document.getElementById("sorted")
+var sortedArray6 = document.getElementById("sorted")
 
-function main() {
+function main6() {
     var size = parseInt(document.getElementById("size6").value)
     let arrayMain = new Array(size)
     for (let i = 0; i < size; i++) {
@@ -13,12 +13,12 @@ function main() {
     var max = Math.max.apply(null, arrayMain)
     var min = Math.min.apply(null, arrayMain)
     var sum1 = sum(min, max, arrayMain)
-    mainArray.innerHTML = "Вхідний масив:  " + arrayMain.join(", ")
+    mainArray6.innerHTML = "Вхідний масив:  " + arrayMain.join(", ")
     maxArray.innerHTML = "Найбільший елемент " + max
     minArray.innerHTML = "Найменший елемент " + min
     sumArray.innerHTML = "Cума між найбільшим і найменшим елементами: " + sum1
     let arraySorted = quickSort(arrayMain, 0, size - 1)
-    sortedArray.innerHTML = "Відсортований масив:  " + arraySorted.join(", ")
+    sortedArray6.innerHTML = "Відсортований масив:  " + arraySorted.join(", ")
 }
 
 function sum(min, max, array) {

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Масив</title>
+</head>
+<style>
+    .small-div{
+        width: 500px;
+        padding-left: 10px;
+        padding-right: 10px;
+        margin: 2% auto auto;
+        text-align: left;
+        background-color: lightgreen;
+        border: black 3px solid;
+        font-family: Arial;
+        font-size: 17px;
+    }
+    .main-div{
+        display: flex;
+        padding: 5%;
+    }
+    .zhenia-div{
+        width: 500px;
+        padding-left: 10px;
+        padding-right: 10px;
+        margin: 2% auto auto;
+        text-align: center;
+    }
+</style>
+<body>
+<div class="main-div">
+    <div class="small-div">
+        <h2 align="center">Таблиця №1, варіант 2</h2>
+        <p>Введіть розмір масиву:</p>
+        <input type="text" id="size2" value="7">
+        <button onclick="scripts/main()">Розрахувати</button>
+        <p id="mainArray2">Вихідний масив:</p>
+        <p id="summaryPaired">Сума елементів з парними індексами: </p>
+        <p id="negativeMultiply">Добуток від'ємних чисел:</p>
+        <p id="maxNumber">Максимальний елемент: та його індекс: </p>
+        <p id="minNumber">Мінімальний елемент серед елементів з непарними <br> індексами:
+            та його індекс: </p>
+        <p id="sortedArray">Відсортований масив:</p>
+        <script src="scripts/massive.js"></script>
+    </div>
+
+    <div class="zhenia-div">
+        <h2>Таблиця №1, варіант 6</h2>
+        <p>Введіть розмір масиву</p>
+        <input type="text" name="size" id="size6" value="10">
+        <button onclick="scripts/main6()">Начать</button>
+        <p id="mainArray6"></p>
+        <p id="max"></p>
+        <p id="min"></p>
+        <p id="sum"></p>
+        <p id="sorted"></p>
+        <script src="scripts/Arrays.js">
+        </script>
+    </div>
+</div>
+<div align="center">
+    <h2>Календар</h2>
+    <input type="date" id="calendarButton" value="">
+    <button onclick="reset()">Очистити поле</button>
+    <script src="scripts/calendar.js"></script>
+</div>
+</body>
+</html>
