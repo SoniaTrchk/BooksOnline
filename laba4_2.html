@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Масив</title>
+</head>
+<style>
+    div{
+        width: 500px;
+        padding-left: 10px;
+        padding-right: 10px;
+        margin: 10% auto auto;
+        text-align: left;
+        background-color: lightgreen;
+        border: black 3px solid;
+        font-family: Arial;
+        font-size: 17px;
+    }
+</style>
+<body>
+<div>
+    <h2 align="center">Таблиця №1, варіант 2</h2>
+    <p>Введіть розмір масиву:</p>
+    <input type="text" id="size2" value="7">
+    <button onclick="scripts/main()">Розрахувати</button>
+    <p id="mainArray">Вихідний масив:</p><!--вихідний масив-->
+    <p id="summaryPaired">Сума елементів з парними індексами: </p><!--сума парні індекси-->
+    <p id="negativeMultiply">Добуток від'ємних чисел:</p><!--добуток від'ємні елементи-->
+    <p id="maxNumber">Максимальний елемент: та його індекс: </p><!--макс елемент + індекс-->
+    <p id="minNumber">Мінімальний елемент серед елементів з непарними <br> індексами:
+    та його індекс: </p><!--мін елемент + непарний індекс-->
+    <p id="sortedArray">Відсортований масив:</p><!--сортування-->
+    <script src="scripts/massive.js"></script>
+</div>
+</body>
+</html>

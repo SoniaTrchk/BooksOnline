@@ -5,7 +5,7 @@ var minArray = document.getElementById("min")
 var sortedArray = document.getElementById("sorted")
 
 function main() {
-    var size = parseInt(document.getElementById("size").value)
+    var size = parseInt(document.getElementById("size6").value)
     let arrayMain = new Array(size)
     for (let i = 0; i < size; i++) {
         arrayMain[i] = Math.floor(Math.random() * 210)
