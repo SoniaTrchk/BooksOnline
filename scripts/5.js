@@ -1,7 +1,13 @@
 $(function () {
+    $('ul.parent > li').hover(function (){
+        $(this).find('ul.child').show(200)
+    }, function (){
+        $(this).find('ul.child').hide(200)
+    })
     $("#datepicker").datepicker();
     $("#accordion").accordion();
     $('.focuspoint').focusPoint();
+    $("#gallery").unitegallery();
 });
 $.datepicker.regional['ru'] = {
     closeText: 'Закрыть',
