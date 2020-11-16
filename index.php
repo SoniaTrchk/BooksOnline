@@ -28,13 +28,13 @@
     <header>
         <div class="header">
             <img src="images/logo.png" class="logo">
-            <a href="index.html" class="logo"><h1>Books Online</h1></a>
+            <a href="index.php" class="logo"><h1>Books Online</h1></a>
             <nav>
                 <ul>
                     <li><a href="">Головна</a></li>
                     <li><a href="JavaScript:window.alert('На жаль, цей розділ не працює')">Про нас</a>
                     <li><a href="">Автори</a></li>
-                    <li><a href="">Література</a></li>
+                    <li><a href="5.3.php">Література</a></li>
                 </ul>
             </nav>
             <form class="search">
@@ -69,6 +69,19 @@
         </div>
     </div>
     <div class="bottom">
+        <h5>Повідомити про нове надходження книг на електронну пошту:  </h5>
+        <form action="index.php"  method="POST">
+            <input type="text" name="email" type="email" required placeholder="Введіть ваш email  ">
+            <button><a type="submit"> Підписатися </a><br></button>
+        </form>
+        <br>
+        <?php
+        if (( $email = $_POST['email'])) {
+            $email = $_POST['email'];
+            echo("Повідомлення про надходження нових книг буде відправлено на : ".$email);
+        }
+        ?>
+        <br>
         <p class="bottom-text">“The library is inhabited by spirits that come out of the pages at night.”
             – <strong>Isabel Allende</strong></p>
         <br>
@@ -81,8 +94,15 @@
     </div>
 
     <footer>
-        <div class="footer">
-
+        <div align="center" class="footer">
+            <?php
+            echo "Сьогоднішня дата: ";
+            date_default_timezone_set("UTC");
+            $time = time();
+            $offset = 2;
+            $time += 2 * 3600;
+            echo date("d-m-Y H:i:s", $time);
+            ?></div>
         </div>
     </footer>
 </div>
