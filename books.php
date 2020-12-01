@@ -17,26 +17,28 @@ function books_all($link){
 
     return $books;
 }
-function books_get($link, $id_books) {
-    $query = sprintf("SELECT * FROM books WHERE id=%d", (int)$id_books);
+function books_get($link, $name) {
+    $query = "SELECT * FROM books WHERE name_ LIKE '%" . $name .  "%'";
 
     $result = mysqli_query($link, $query);
 
-    if (!$result) die (mysqli_error($link));
-
-    $books = mysqli_fetch_assoc($result);
-
+    if (!$result){
+        $books = null;
+    } else {
+        $books = mysqli_fetch_assoc($result);
+    }
     return $books;
 }
 function books_new($link, $name_, $genre) {
     $name_ = trim($name_);
     $genre = trim($genre);
 
+
     if ($name_ == "") {
         return false;
     }
 
-    $g = "INSERT INTO books (name_,genre) VALUES (%s','%s')";
+    $g = "INSERT INTO books (name_,genre) VALUES ('%s','%s')";
 
     $query = sprintf($g, mysqli_real_escape_string($link, $name_), mysqli_real_escape_string($link, $genre));
 
@@ -48,44 +50,6 @@ function books_new($link, $name_, $genre) {
 
     return true;
 }
-function books_edit($link, $id, $name_, $genre) {
-    $name_ = trim($name_);
-    $genre= trim($genre);
 
 
-    $id = (int)$id;
 
-    if($name_ == '') {
-        return false;
-    }
-
-    $sql = "UPDATE books SET name_='%s', genre='%s', WHERE id='%d'";
-
-    $query = sprintf($sql, mysqli_real_escape_string($link, $name_), mysqli_real_escape_string($link, $genre), $id);
-
-    $result = mysqli_query($link, $query);
-
-    if (!$result) {
-        die(mysqli_error($link));
-    }
-
-    return mysqli_affected_rows($link);
-}
-
-function books_delete($link, $id) {
-    $id = (int)$id;
-
-    if($id == 0) {
-        return false;
-    }
-
-    $query = sprintf("DELETE FROM books WHERE id='%d'", $id);
-    $result = mysqli_query($link, $query);
-
-    if(!$result) {
-        die(mysqli_error($link));
-    }
-
-    return mysqli_affected_rows($link);
-}
-?>

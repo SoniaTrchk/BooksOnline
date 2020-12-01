@@ -1,4 +1,12 @@
-<!DOCTYPE html>
+<?php
+require_once("db.php");
+require_once('books.php');
+
+$link = db_connect();
+
+$books = books_all($link);
+ books_new($link, "dfg", "m");
+?><!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -68,8 +76,12 @@
     <div class="php_answer">
         <?php
         if (( $search = $_GET['search'])) {
-            $search = $_GET['search'];
-            echo('За вашим запитом "'.$search.'" нічого не занйдено');
+            $book = books_get($link, $search);
+            if ($book == null) {
+                echo("Такої книги не існує(");
+            } else {
+                echo($book["id"]);
+            }
         }
         ?>
     </div>
@@ -129,6 +141,17 @@
         </ul>
 
     </div>
+    <?php
+    foreach($books as $b):
+        echo ($books);?>
+        <tr>
+            <td><?=$b["id"]?></td>
+            <td><?=$b["name_"]?></td>
+            <td><?=$b["genre"]?></td>
+
+        </tr>
+    <?php endforeach;?>
+
 
     <footer>
         <div align="center" class="footer">
