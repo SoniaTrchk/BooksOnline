@@ -19,9 +19,9 @@ $books = books_all($link);
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script>
-        $( function() {
-            $( "#dialog" ).dialog();
-        } );
+        $(function () {
+            $("#dialog").dialog();
+        });
     </script>
 </head>
 <style>
@@ -32,11 +32,13 @@ $books = books_all($link);
     ul#ul1 {
         list-style-image: url("images/bestseller.png");
     }
-    div p{
+
+    div p {
         padding-left: 10px;
         font-size: 15px;
     }
-    .php_answer{
+
+    .php_answer {
         background-color: #eeeeee;
         text-align: center;
         font-family: "Open Sans", sans-serif;
@@ -70,18 +72,20 @@ $books = books_all($link);
     </header>
     <div class="php_answer">
         <?php
-        if (( $search = $_GET['search'])) {
+        if (($search = $_GET['search'])) {
             $book = books_get($link, $search);
             $author = authors_get($link, $search);
             $article = articles_get($link, $search);
             if ($book == null && $author == null && $article == null) {
                 echo("За вашим запитом нічого не знайдено");
             } else {
-                if ($book != null){
+                if ($book != null) {
                     echo($book["name_"]);
-                }if ($author != null){
-                    echo($author["name_"]." ".$author["surname"]);
-                }if ($article != null){
+                }
+                if ($author != null) {
+                    echo($author["name_"] . " " . $author["surname"]);
+                }
+                if ($article != null) {
                     echo($article["name_"]);
                 }
             }
@@ -105,25 +109,39 @@ $books = books_all($link);
         <div class="best-today">
             <ul id="ul1">
                 <h4>Бестселери нашої бібліотеки</h4>
-                <li><a><h5>Бог завжди подорожує інкогніто </h5><br><h6>Лоран Гунель</h6></a></li>
-                <li><a><h5>Місто дівчат </h5><br><h6>Елізабет Гілберт</h6></a></li>
-                <li><a><h5>Нормальні люди</h5><br><h6>Саллі Руні</h6></a></li>
-                <li><a><h5>П'ять четвертинок мандарина</h5><br><h6>Джоан Гарріс</h6></a></li>
+                <?php
+                $books = books_all($link);
+                $length = count($books);
+
+                if ($length > 5) {
+                    for ($i = 1; $i <= 5; $i++) {
+                        $b = $books[$i];
+                        $w = get_writing($link, $b["id"]);
+                        $a = get_authors($link, $w['id_author']);
+                        ?>
+                        <li><a><h5><?= $a["name_"] . " " . $a["surname"] . " - '" . $b["name_"] . "'" ?></h5><br>
+                                <h6> <?= "'" . $b["genre"] ?></h6></a></li>
+                    <?php }
+                } else {
+                    foreach ($books as $b):
+                        $w = get_writing($link, $b["id"]);
+                        $a = get_authors($link, $w['id_author']);
+                        ?>
+                        <li><a><h5><?= $a["name_"] . " " . $a["surname"] . " - '" . $b["name_"] . "'" ?></h5><br>
+                                <h6> <?= "'" . $b["genre"] ?></h6></a></li>
+                    <?php endforeach;
+                } ?>
+
             </ul>
         </div>
     </div>
 
     <div class="bottom">
-
+        <br>
         <p class="bottom-text">“The library is inhabited by spirits that come out of the pages at night.”
             – <strong>Isabel Allende</strong></p>
         <br>
-        <p>Новинки світової літератури: </p>
-        <ul>
-            <li><strong>Мальвіль</strong> Робер Мерль</li>
-            <li><strong>Геній</strong> Мо Янь</li>
-            <li><strong>Двобій</strong> Кліффорд Саймак</li>
-        </ul>
+
 
     </div>
 

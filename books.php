@@ -17,6 +17,40 @@ function books_all($link){
 
     return $books;
 }
+function authors_all($link){
+    $query = "SELECT * FROM authors ORDER BY id DESC";
+    $result = mysqli_query($link, $query);
+
+    if(!$result)
+        die (mysqli_error($link));
+
+    $n = mysqli_num_rows($result);
+    $authors = array();
+
+    for ($i = 0; $i < $n; $i++)
+    {
+        $row = mysqli_fetch_assoc($result);
+        $authors[] = $row;
+    }
+
+    return $authors;
+}
+
+function get_authors ($link, $id){
+    $query = "SELECT * FROM authors WHERE id LIKE '%"  .$id. "%'";
+
+    $result = mysqli_query($link, $query);
+
+    if (!$result){
+        $author = null;
+    } else {
+        $author = mysqli_fetch_assoc($result);
+    }
+
+    return $author;
+
+}
+
 function books_get($link, $name) {
     $query = "SELECT * FROM books WHERE name_ LIKE '%" . $name .  "%'";
 
@@ -30,17 +64,17 @@ function books_get($link, $name) {
     return $books;
 }
 
-function authors_get($link, $surname) {
-    $query = "SELECT * FROM authors WHERE surname LIKE '%" . $surname .  "%'";
+function authors_get($link, $name, $surname) {
+    $query = "SELECT * FROM authors WHERE surname LIKE '%" . $surname .  "%' AND name_ LIKE '%" . $name .  "%'";
 
     $result = mysqli_query($link, $query);
 
     if (!$result){
-        $surname = null;
+        $author = null;
     } else {
-        $surname = mysqli_fetch_assoc($result);
+        $author = mysqli_fetch_assoc($result);
     }
-    return $surname;
+    return $author;
 }
 
 function articles_get($link, $name_) {
@@ -78,5 +112,60 @@ function books_new($link, $name_, $genre) {
     return true;
 }
 
+function writing_new($link, $id_book, $id_author) {
+    $id_book = trim($id_book);
+    $id_author = trim($id_author);
+
+
+    if ($id_book == "" || $id_author == "") {
+        return false;
+    }
+
+    $g = "INSERT INTO writing (id_book,id_author) VALUES ('%s','%s')";
+
+    $query = sprintf($g, mysqli_real_escape_string($link, $id_book), mysqli_real_escape_string($link, $id_author));
+
+    $result = mysqli_query($link, $query);
+
+    if(!$result) {
+        die (mysqli_error($link));
+    }
+
+    return true;
+}
+
+function authors_new($link, $name_, $surname) {
+    $name_ = trim($name_);
+    $surname = trim($surname);
+
+
+    if ($name_ == "" || $surname == "") {
+        return false;
+    }
+
+    $g = "INSERT INTO authors (name_,surname) VALUES ('%s','%s')";
+
+    $query = sprintf($g, mysqli_real_escape_string($link, $name_), mysqli_real_escape_string($link, $surname));
+
+    $result = mysqli_query($link, $query);
+
+    if(!$result) {
+        die (mysqli_error($link));
+    }
+
+    return true;
+}
+ function get_writing($link, $id){
+     $query = "SELECT * FROM writing WHERE id_book LIKE '%"  . $id .  "%'";
+
+     $result = mysqli_query($link, $query);
+
+     if (!$result){
+         $writing = null;
+     } else {
+         $writing = mysqli_fetch_assoc($result);
+     }
+     return $writing;
+ }
 
 
