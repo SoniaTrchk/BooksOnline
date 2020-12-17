@@ -72,10 +72,18 @@ $books = books_all($link);
         <?php
         if (( $search = $_GET['search'])) {
             $book = books_get($link, $search);
-            if ($book == null) {
-                echo("Такої книги не існує(");
+            $author = authors_get($link, $search);
+            $article = articles_get($link, $search);
+            if ($book == null && $author == null && $article == null) {
+                echo("За вашим запитом нічого не знайдено");
             } else {
-                echo($book["name_"]);
+                if ($book != null){
+                    echo($book["name_"]);
+                }if ($author != null){
+                    echo($author["name_"]." ".$author["surname"]);
+                }if ($article != null){
+                    echo($article["name_"]);
+                }
             }
         }
         ?>
@@ -118,16 +126,6 @@ $books = books_all($link);
         </ul>
 
     </div>
-    <?php
-    foreach($books as $b):
-        ?>
-        <tr>
-            <td><?=$b["id"]?></td>
-            <td><?=$b["name_"]?></td>
-            <td><?=$b["genre"]?></td>
-
-        </tr>
-    <?php endforeach;?>
 
     <footer>
         <div align="center" class="footer">

@@ -6,7 +6,7 @@ $link = db_connect();
 $name_ = db_connect();
 $genre = db_connect();
 $books = books_all($link);
-$books_new = books_new($link, $name_, $genre)?>
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

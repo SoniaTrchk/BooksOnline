@@ -29,6 +29,33 @@ function books_get($link, $name) {
     }
     return $books;
 }
+
+function authors_get($link, $surname) {
+    $query = "SELECT * FROM authors WHERE surname LIKE '%" . $surname .  "%'";
+
+    $result = mysqli_query($link, $query);
+
+    if (!$result){
+        $surname = null;
+    } else {
+        $surname = mysqli_fetch_assoc($result);
+    }
+    return $surname;
+}
+
+function articles_get($link, $name_) {
+    $query = "SELECT * FROM books WHERE name_ LIKE '%" . $name_ .  "%'";
+
+    $result = mysqli_query($link, $query);
+
+    if (!$result){
+        $articles = null;
+    } else {
+        $articles = mysqli_fetch_assoc($result);
+    }
+    return $articles;
+}
+
 function books_new($link, $name_, $genre) {
     $name_ = trim($name_);
     $genre = trim($genre);
