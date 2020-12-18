@@ -1,7 +1,8 @@
 <?php
+session_start();
 require_once("db.php");
 require_once('books.php');
-
+require("connect.php");
 $link = db_connect();
 
 $books = books_all($link);
@@ -45,6 +46,9 @@ $books = books_all($link);
         font-size: 15px;
         padding-top: 10px;
     }
+    a{
+        font-family: "Open Sans", sans-serif;
+    }
 </style>
 <body>
 <div id="dialog" title="Books Online">
@@ -53,6 +57,7 @@ $books = books_all($link);
 </div>
 <div class="container">
     <header>
+        <a href="login.php" style="float:right; margin-right: 10px">Вхід</a>
         <div class="header">
             <img src="images/logo.png" class="logo">
             <a href="index.php" class="logo"><h1>Books Online</h1></a>
@@ -93,6 +98,11 @@ $books = books_all($link);
         ?>
     </div>
     <div class="main">
+        <?php
+        if ($_SESSION['username']!=null){
+            echo "Вітаємо,".$_SESSION['username']."!";
+        }
+        ?>
         <div class="best-lib">
             <ul id="ul">
                 <h4><strong>Список жанрів, які ви можете знайти у нашій бібліотеці</strong></h4>

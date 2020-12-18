@@ -1,0 +1,9 @@
+.form-signin{
+    max-width: 30%;
+    padding: 50px;
+    background: rgba(226,190,255,0.81);
+    margin: 15% 0 0 35%;
+}
+body{
+    background-image: url("../images/books_bg.gif");
+}

@@ -1,10 +1,7 @@
 <?php
 require_once("db.php");
 require_once('books.php');
-
 $link = db_connect();
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -49,10 +46,14 @@ $link = db_connect();
         font-size: 15px;
         padding-top: 10px;
     }
+    a{
+        font-family: "Open Sans", sans-serif;
+    }
 </style>
 <body>
 <div class="container">
     <header>
+        <a href="login.php" style="float:right; margin-right: 10px">Вхід</a>
         <div class="header">
             <img src="images/logo.png" class="logo">
             <a href="index.php" class="logo"><h1>Books Online</h1></a>
