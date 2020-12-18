@@ -6,6 +6,25 @@ require("connect.php");
 $link = db_connect();
 
 $books = books_all($link);
+session_start();
+
+if(isset($_GET['lang']) && !empty($_GET['lang'])){
+    $_SESSION['lang'] = $_GET['lang'];
+
+    setcookie("Selected_lang", $_SESSION['lang'], time()+60);
+
+    if(isset($_SESSION['lang']) && $_SESSION['lang'] != $_GET['lang']){
+        echo "<script type='text/javascript'> location.reload(); </script>";
+    }
+}
+
+if(isset($_SESSION['lang'])){
+    include $_SESSION['lang'].".php";
+}else{
+    include "ukr.php";
+}
+?>
+
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -51,48 +70,54 @@ $books = books_all($link);
     }
 </style>
 <body>
+<script>
+    function changeLang(){
+        document.getElementById('form_lang').submit();
+    }
+</script>
 <div id="dialog" title="Books Online">
     <p> Ласкаво просимо до найкращої віртуальної бібліотеки Books Online! Бажаємо захопливої подорожі до світу книжок.
         Вікно можна закрити, натиснувши на &apos;x&apos;.</p>
 </div>
 <div class="container">
     <header>
-        <a href="login.php" style="float:right; margin-right: 10px">Вхід</a>
+        <a href="login.php" style="float:right; margin-right: 10px"><?= _LOGIN_IN ?></a>
         <div class="header">
             <img src="images/logo.png" class="logo">
             <a href="index.php" class="logo"><h1>Books Online</h1></a>
             <nav>
                 <ul>
-                    <li><a href="">Головна</a></li>
-                    <li><a href="JavaScript:window.alert('На жаль, цей розділ не працює')">Про нас</a>
-                    <li><a href="">Автори</a></li>
-                    <li><a href="literature.php">Література</a></li>
+                    <li><a href=""> <?= _MAIN?></a></li>
+                    <li><a href=""><?= _AUTHORS?></a></li>
+                    <li><a href="literature.php"><?= _LITERATURE?></a></li>
+                    <li>
+                        <form method='get' action='' id='form_lang' >
+                            <select name='lang' onchange='changeLang();' >
+                                <option value='eng' <?php if(isset($_SESSION['lang']) && $_SESSION['lang'] == 'eng'){ echo "selected"; } ?> ><?= english ?></option>
+                                <option value='ukr' <?php if(isset($_SESSION['lang']) && $_SESSION['lang'] == 'ukr'){ echo "selected"; } ?> ><?= українська ?></option>
+                                <option value='rus' <?php if(isset($_SESSION['lang']) && $_SESSION['lang'] == 'rus'){ echo "selected"; } ?> ><?= русский ?></option>
+                            </select>
+                        </form>
+                    </li>
                 </ul>
             </nav>
             <form class="search">
-                <input type="search" name="search" placeholder="Пошук">
-                <input type="submit" value="Знайти">
+                <input type="search" name="search" placeholder="<?= _SEARCH?>">
+                <input type="submit" value="<?= _SEARCH?>" onclick="window.location.reload()">
             </form>
         </div>
+
     </header>
     <div class="php_answer">
         <?php
         if (($search = $_GET['search'])) {
             $book = books_get($link, $search);
-            $author = authors_get($link, $search);
-            $article = articles_get($link, $search);
-            if ($book == null && $author == null && $article == null) {
-                echo("За вашим запитом нічого не знайдено");
+            if ($book == null) {
+                echo("Такої книги не існує(");
             } else {
-                if ($book != null) {
-                    echo($book["name_"]);
-                }
-                if ($author != null) {
-                    echo($author["name_"] . " " . $author["surname"]);
-                }
-                if ($article != null) {
-                    echo($article["name_"]);
-                }
+                $w = get_writing($link, $book["id"]);
+                $a = get_authors($link, $w['id_author']);
+                echo $a["name_"] . " " . $a["surname"] . " - '" . $book["name_"] . "' , " . $book["genre"] . ".";
             }
         }
         ?>
@@ -158,13 +183,15 @@ $books = books_all($link);
     <footer>
         <div align="center" class="footer">
             <?php
-            echo "Сьогоднішня дата: ";
+            echo _TIME ;
             date_default_timezone_set("UTC");
             $time = time();
             $offset = 2;
             $time += 2 * 3600;
             echo date("d-m-Y H:i:s", $time);
             ?>
+            <br>
+            <?= _LANG_SELECTED?><?php echo $_COOKIE["Selected_lang"];?>
         </div>
     </footer>
 </body>

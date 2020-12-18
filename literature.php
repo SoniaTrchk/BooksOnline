@@ -46,7 +46,8 @@ $link = db_connect();
         font-size: 15px;
         padding-top: 10px;
     }
-    a{
+
+    a {
         font-family: "Open Sans", sans-serif;
     }
 </style>
@@ -60,14 +61,13 @@ $link = db_connect();
             <nav>
                 <ul>
                     <li><a href="index.php">Головна</a></li>
-                    <li><a href="JavaScript:window.alert('На жаль, цей розділ не працює')">Про нас</a>
                     <li><a href="">Автори</a></li>
                     <li><a href="literature.php">Література</a></li>
                 </ul>
             </nav>
             <form class="search">
                 <input type="search" name="search" placeholder="Пошук">
-                <input type="submit" value="Знайти">
+                <input type="submit" value="Знайти" onclick="window.location.reload()">
             </form>
         </div>
     </header>
@@ -78,10 +78,13 @@ $link = db_connect();
             if ($book == null) {
                 echo("Такої книги не існує(");
             } else {
-                 echo($book["name_"]);
+                $w = get_writing($link, $book["id"]);
+                $a = get_authors($link, $w['id_author']);
+                echo $a["name_"] . " " . $a["surname"] . " - '" . $book["name_"] . "' , " . $book["genre"] . ".";
             }
         }
         ?>
+
     </div>
 
     <div class="main">
@@ -102,16 +105,16 @@ $link = db_connect();
             if (($name_add = $_GET['name_add'] and $genre_add = $_GET['genre_add'])) {
                 $book = books_get($link, $name_add);
                 if ($book == null) {
-                    if ($authorName_add = $_GET['authorName_add'] and $authorSurname_add = $_GET['authorSurname_add'] ) {
+                    if ($authorName_add = $_GET['authorName_add'] and $authorSurname_add = $_GET['authorSurname_add']) {
                         $books_new = books_new($link, $name_add, $genre_add);
                         $new_author = authors_get($link, $authorName_add, $authorSurname_add);
-                        if($new_author == null) {
+                        if ($new_author == null) {
                             $authors_new = authors_new($link, $authorName_add, $authorSurname_add);
                         }
                         $new_author = authors_get($link, $authorName_add, $authorSurname_add);
-                        echo ($new_author["name_"]);
+                        echo($new_author["name_"]);
                         $new_book = books_get($link, $name_add);
-                        echo ($new_book["id"] . $new_author["id"]);
+                        echo($new_book["id"] . $new_author["id"]);
                         $writing_new = writing_new($link, $new_book["id"], $new_author["id"]);
                     }
                 }
@@ -126,18 +129,12 @@ $link = db_connect();
                     $w = get_writing($link, $b["id"]);
                     $a = get_authors($link, $w['id_author']);
                     ?>
-                    <li><?=  $a["name_"] . " " . $a["surname"] . " - '" . $b["name_"] . "' , " . $b["genre"] . "." ?></li>
+                    <li><?= $a["name_"] . " " . $a["surname"] . " - '" . $b["name_"] . "' , " . $b["genre"] . "." ?></li>
                 <?php endforeach; ?>
 
 
             </ol>
         </div>
-        <?php
-        $authors = authors_all($link);
-        foreach ($authors as $a):
-            ?>
-            <li><?= "'" . $a["name_"] . "'" . " - " . $a["surname"] ?></li>
-        <?php endforeach; ?>
     </div>
     <div>
         <footer>
