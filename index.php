@@ -87,7 +87,7 @@ if(isset($_SESSION['lang'])){
             <nav>
                 <ul>
                     <li><a href=""> <?= _MAIN?></a></li>
-                    <li><a href=""><?= _AUTHORS?></a></li>
+                    <li><a href="mail.php"><?= _AUTHORS?></a></li>
                     <li><a href="literature.php"><?= _LITERATURE?></a></li>
                     <li>
                         <form method='get' action='' id='form_lang' >

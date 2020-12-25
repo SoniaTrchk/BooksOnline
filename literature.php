@@ -2,6 +2,7 @@
 require_once("db.php");
 require_once('books.php');
 $link = db_connect();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
