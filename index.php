@@ -92,9 +92,9 @@ if(isset($_SESSION['lang'])){
                     <li>
                         <form method='get' action='' id='form_lang' >
                             <select name='lang' onchange='changeLang();' >
-                                <option value='eng' <?php if(isset($_SESSION['lang']) && $_SESSION['lang'] == 'eng') ?> ><?= english ?></option>
-                                <option value='ukr' <?php if(isset($_SESSION['lang']) && $_SESSION['lang'] == 'ukr') ?> ><?= українська ?></option>
-                                <option value='rus' <?php if(isset($_SESSION['lang']) && $_SESSION['lang'] == 'rus') ?> ><?= русский ?></option>
+                                <option value='eng' <?php if(isset($_SESSION['lang']) && $_SESSION['lang'] == 'eng'){ echo "selected"; } ?> ><?= english ?></option>
+                                <option value='ukr' <?php if(isset($_SESSION['lang']) && $_SESSION['lang'] == 'ukr'){ echo "selected"; } ?> ><?= українська ?></option>
+                                <option value='rus' <?php if(isset($_SESSION['lang']) && $_SESSION['lang'] == 'rus'){ echo "selected"; } ?> ><?= русский ?></option>
                             </select>
                         </form>
                     </li>
