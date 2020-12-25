@@ -1,3 +1,7 @@
+<?php
+session_start();
+echo 'Користувач: '.$_SESSION['username'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,8 +10,6 @@
 </head>
 <body>
 <?php
-$_SESSION['user'] =  '1@gmail.com';
-echo($_SESSION["user"]);
 require ('mail_bd.php');
 $link = db_connect();
 ?>
@@ -15,7 +17,7 @@ $link = db_connect();
     <form action="" method="post">
         <br>
         <h3>Напишіть ваш лист:  </h3>
-        <input id='text' type="text">
+        <textarea name="text" id="text" cols="40" rows="10"></textarea>
         <br>
         <input id='send' type="button"  value="Відправити листа">
         <br>
@@ -53,7 +55,6 @@ $link = db_connect();
         });
     });
 
-
     function del(message){
         $.ajax({
             type: "POST",
@@ -66,7 +67,5 @@ $link = db_connect();
         return false;
     }
 </script>
-
-
 </body>
 </html>

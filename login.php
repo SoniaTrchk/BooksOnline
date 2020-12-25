@@ -14,7 +14,7 @@ if (isset($_POST['username']) && isset($_POST['password'])){
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    $query = "SELECT * FROM users WHERE username='$username' and password='$password'";
+    $query = "SELECT * FROM users WHERE email='$username' and password='$password'";
     $result = mysqli_query($connection, $query) or die(mysqli_error($connection));
     $count = mysqli_num_rows($result);
 
@@ -32,8 +32,7 @@ if (isset($_POST['username']) && isset($_POST['password'])){
         <?php
         if (isset($_SESSION['username'])){
             $username = $_SESSION['username'];
-            echo "Ви успішно увійшли.\n";
-            echo "Ласкаво просимо, ".$username."!";
+            echo "Ласкаво просимо, ".$username."!\n";
             echo '<a href="logout.php" style="float:right; margin-right: 10px">Вийти</a>';
         }
         ?>

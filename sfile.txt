@@ -10,3 +10,13 @@ Username: 22
 Email: soniatrchk@ukr.net
 Password: 22
 
+
+Username: user1
+Email: 1@gmail.com
+Password: 1
+
+
+Username: user2
+Email: 2@gmail.com
+Password: 2
+

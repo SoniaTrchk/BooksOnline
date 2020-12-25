@@ -3,13 +3,13 @@ session_start();
 require ('mail_bd.php');
 $link = db_connect();
 
-$_SESSION['user'] =  '2@gmail.com';
+$_SESSION['user'] = $_SESSION['username'];
 
 if($_SESSION['user'] ==  '1@gmail.com'){
-$query = "SELECT text FROM letters WHERE id_user = '1'";
+$query = "SELECT text FROM letters WHERE id_user = '16'";
 $from = '2@gmail.com';
 } else{
-$query = "SELECT text FROM letters WHERE id_user = '2'";
+$query = "SELECT text FROM letters WHERE id_user = '17'";
 $from = '1@gmail.com';
 }
 

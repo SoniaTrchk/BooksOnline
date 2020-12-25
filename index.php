@@ -176,7 +176,7 @@ if(isset($_SESSION['lang'])){
             – <strong>Isabel Allende</strong></p>
         <br>
 
-
+        <a href="mail.php">Перейти до листів</a>
     </div>
 
     <footer>
