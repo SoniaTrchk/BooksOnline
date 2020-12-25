@@ -25,7 +25,7 @@ if ($num_rows == 0){
     echo "<table border='1'>
     <tr>
         <th>Від кого:</th>
-        <th>Вміст листа:  </th>
+        <th>Зміст листа:  </th>
     </tr>";
 
     while ($row = mysqli_fetch_array($result)) {

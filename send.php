@@ -9,19 +9,19 @@ $_SESSION['user'] =  '1@gmail.com';
 
 if($text !=""){
     if($_SESSION['user'] == '1@gmail.com'){
-        $receiver = '<message>
-  <receiver>2@gmail.com</receiver>
-  <textmessage>' . $text . '</textmessage>
-</message>
+        $receiver = '<Лист>
+  <Отримувач>2@gmail.com</Отримувач>
+  <Зміст>' . $text . '</Зміст>
+</Лист>
 ';
         $query="INSERT INTO letters (id_user, text) VALUES('2','$text')";
         file_put_contents('mailbox.xml', $receiver, FILE_APPEND | LOCK_EX);
     }
     else{
-        $receiver = '<message>
-  <receiver>1@gmail.com</receiver>
-  <textmessage>' . $text . '</textmessage>
-</message>
+        $receiver = '<Лист>
+  <Отримувач>1@gmail.com</Отримувач>
+  <Зміст>' . $text . '</Зміст>
+</Лист>
 ';
         $query="INSERT INTO letters (id_user, text) VALUES('1','$text')";
         file_put_contents('mailbox.xml', $receiver, FILE_APPEND | LOCK_EX);
