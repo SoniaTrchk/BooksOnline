@@ -15,7 +15,7 @@ if (isset($_POST['username']) && isset($_POST['password'])){
     $password = $_POST['password'];
     $query = "INSERT INTO users (username, email, password) VALUES ('$username', '$email', '$password')";
 
-    $f = fopen('sfile.txt', 'a+'); // Открываем файл
+    $f = fopen('sfile.txt', 'a+');
     fwrite($f, "\nUsername: ".$username."\nEmail: ".$email."\nPassword: ".$password."\n\n");
     fclose($f);
 }

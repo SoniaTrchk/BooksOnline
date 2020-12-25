@@ -7,6 +7,17 @@ $link = db_connect();
 $text = $_REQUEST["text"];
 $_SESSION['user'] = $_SESSION['username'];
 
+$send_from = $_SESSION['username'];
+if ($_SESSION['user'] == '1@gmail.com'){
+    $send_to = '2@gmail.com';
+}else{
+    $send_to = '2@gmail.com';
+}
+
+$f = fopen('mail.txt', 'a+');
+fwrite($f, "\nВідправник: ".$send_from."\nОтримувач: ".$send_to."\nТекст: ".$text."\n\n");
+fclose($f);
+
 if($text !=""){
     if($_SESSION['user'] == '1@gmail.com'){
         $receiver = '<Лист>
